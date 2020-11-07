@@ -1,31 +1,25 @@
-<div class="container">
-  <h1>All Customers</h1>
-
-  <div class="columns">
-    <% @customers do |customer| %>
-    <div class="card">
-      <% if customer.image.present? %>
-      <div class="card-image">
-        <figure class="image is-4by3">
-          <%= image_tag customer.image %>
-        </figure>
-      </div>
-      <% end %>
-      <div class="card-content">
-        <div class="media">
-          <div class="media-content">
-            <p class="title is-4"><%= customer.full_name %></p>
-            <% if customer.email_address.present? %>
-            <p class="subtitle is-6"><%= customer.email_address %></p>
-            <% end %>
-            <p class="subtitle is-6"><%= customer.phone_number %></p>
-          </div>
-        </div>
-        <div class="content">
-          <%= customer.notes %>
-        </div>
-      </div>
+<div class="column is-one-third">
+  <div class="card">
+    <% if customer.image.present? %>
+    <div class="card-image">
+      <figure class="image is-4by3">
+        <%= image_tag customer.image %>
+      </figure>
     </div>
     <% end %>
+    <div class="card-content">
+      <div class="media">
+        <div class="media-content">
+          <p class="title is-4"><%= customer.full_name %></p>
+          <% if customer.email_address.present? %>
+          <p class="subtitle is-6"><%= customer.email_address %></p>
+          <% end %>
+          <p class="subtitle is-6"><%= customer.phone_number %></p>
+        </div>
+      </div>
+      <div class="content">
+        <%= customer.notes %>
+      </div>
+    </div>
   </div>
 </div>
